@@ -383,6 +383,10 @@
                 font-size: 1.1rem;
             }
         }
+
+        section[id] {
+            scroll-margin-top: 80px; 
+        }
     </style>
 </head>
 
@@ -426,7 +430,7 @@
     <section id="home" class="min-h-screen flex items-center justify-center relative">
         <div class="container mx-auto px-6 text-center">
             <h1 id="title" class="text-5xl md:text-7xl font-bold mb-4">
-                <span class="gradient-text">ProMind360</span>
+                <span class="gradient-text">Promind360</span>
             </h1>
 
             <div class="text-xl md:text-2xl mb-6 h-8">
@@ -524,34 +528,7 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-6">Uzmanlık Alanlarımız</h3>
                         <div class="space-y-6">
-                            <div>
-                                <div class="flex justify-between mb-2 text-sm">
-                                    <span>Lüks Marka Stratejisi</span>
-                                    <span>98%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="98"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2 text-sm">
-                                    <span>Dijital Kampanyalar</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="95"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2 text-sm">
-                                    <span>SEO & Analitik</span>
-                                    <span>92%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-width="92"></div>
-                                </div>
-                            </div>
-                            <!-- Yeni Eklenen Alanlar -->
+
                             <div>
                                 <div class="flex justify-between mb-2 text-sm">
                                     <span>Stratejik Pazarlama</span>
@@ -807,12 +784,30 @@
         </div>
     </section>
 
-    <a href="https://wa.me/+905066184386?text=Merhaba%2C%20ProMind360%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum"
-        target="_blank" class="whatsapp-button hover-lift">
+    <a href="https://wa.me/+905066184386" target="_blank" class="whatsapp-button hover-lift">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+
     <script>
+        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        //     anchor.addEventListener('click', function (e) {
+        //         e.preventDefault();
+        //         const targetId = this.getAttribute('href').substring(1);
+        //         const targetElement = document.getElementById(targetId);
+        //         const navbarHeight = document.querySelector('nav').offsetHeight;
+        //         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+        //         window.scrollTo({
+        //             top: targetPosition,
+        //             behavior: 'smooth'
+        //         });
+
+        //         if (this.hasAttribute('data-close-menu')) {
+        //             toggleMenu();
+        //         }
+        //     });
+        // });
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -940,7 +935,6 @@
             }
         });
 
-        // WhatsApp animasyonu
         const whatsappButton = document.querySelector('.whatsapp-button');
         const whatsappIcon = whatsappButton.querySelector('i');
         const contactButton = document.getElementById('contact-button');
