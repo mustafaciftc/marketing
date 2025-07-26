@@ -238,6 +238,17 @@
         .whatsapp-button i {
             font-size: 28px;
             color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-pulse {
+            animation: whatsappPulse 1s ease;
+        }
+
+        @keyframes whatsappPulse {
+            0% { transform: scale(1); background: rgba(249, 246, 238, 0.15); }
+            50% { transform: scale(1.2); background: #25D366; }
+            100% { transform: scale(1); background: rgba(249, 246, 238, 0.15); }
         }
 
         @media (min-width: 769px) {
@@ -255,79 +266,82 @@
         }
 
         @media (max-width: 768px) {
+            #title {
+                margin-top: 50px;
+            }
             h1 {
-                font-size: 2rem; /* Reduced for better fit */
+                font-size: 2rem; 
             }
             .text-xl {
-                font-size: 1.125rem; /* Adjusted for readability */
+                font-size: 1.125rem; 
             }
             .text-lg {
-                font-size: 0.875rem; /* Fine-tuned for mobile */
+                font-size: 0.875rem; 
             }
             .container {
                 padding-left: 0.5rem;
-                padding-right: 0.5rem; /* Reduced padding for tighter layout */
+                padding-right: 0.5rem; 
             }
             .grid.md\:grid-cols-2,
             .grid.lg\:grid-cols-3 {
                 grid-template-columns: 1fr;
             }
             .stat-number {
-                font-size: 1.75rem; /* Scaled down for mobile */
+                font-size: 1.75rem;
             }
             section {
                 padding-top: 3rem;
-                padding-bottom: 3rem; /* Adjusted padding */
+                padding-bottom: 3rem; 
             }
             .min-h-screen {
-                min-height: calc(100vh - 3rem); /* Adjusted height */
+                min-height: calc(100vh - 3rem); 
             }
             .whatsapp-button {
                 width: 50px;
                 height: 50px;
             }
             .whatsapp-button i {
-                font-size: 22px; /* Adjusted icon size */
+                font-size: 22px; 
             }
             nav .gradient-text {
-                font-size: 1.5rem; /* Adjusted logo text size */
-                line-height: 1.2; /* Improved line spacing */
+                font-size: 1.5rem; 
+                line-height: 1.2; 
             }
             nav img {
-                height: 12rem; /* Adjusted logo height for mobile */
-                max-width: 100%; /* Ensure it scales properly */
+                height: 12rem; 
+                max-width: 100%; 
             }
             #home p {
-                margin-bottom: 1.5rem; /* Adjusted spacing */
+                margin-bottom: 1.5rem; 
             }
             #home .grid {
-                grid-template-columns: 1fr 1fr; /* Simplified grid for mobile */
+                grid-template-columns: 1fr 1fr; 
                 gap: 1rem;
             }
         }
 
         @media (max-width: 640px) {
             h1 {
-                font-size: 1.75rem; /* Further reduced */
+                font-size: 1.75rem; 
             }
             .text-xl {
                 font-size: 1rem;
             }
             .text-lg {
-                font-size: 0.75rem; /* Further fine-tuned */
+                font-size: 0.75rem; 
             }
             .grid.grid-cols-2 {
                 grid-template-columns: 1fr;
             }
             nav img {
-                height: 10rem; /* Even smaller logo on very small screens */
+                height: 10rem; 
             }
             #mobile-menu {
-                width: 70%; /* Slightly narrower menu */
-                padding: 1.5rem; /* Reduced padding */
+                width: 70%; 
+                padding: 1.5rem; 
             }
             #mobile-menu a {
-                font-size: 1.1rem; /* Adjusted font size */
+                font-size: 1.1rem; 
             }
         }
     </style>
@@ -372,7 +386,7 @@
 
     <section id="home" class="min-h-screen flex items-center justify-center relative">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            <h1 id="title" class="text-5xl md:text-7xl font-bold mb-4">
                 <span class="gradient-text">ProMind360</span>
             </h1>
 
@@ -391,7 +405,7 @@
                 </a>
                 <a href="#contact"
                     class="border-2 border-secondary text-secondary px-8 py-3 rounded-xl hover:bg-secondary hover:text-charcoal transition-all hover:scale-105 text-base">
-                    Danışmanlık Al
+                    Bilgi Al
                 </a>
             </div>
 
@@ -435,20 +449,7 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                            alt="Değerler" class="w-full h-48 object-cover">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">Değerler</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Misyon</span>
-                            </div>
-                        </div>
-                    </div>
+                
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">Değerlerimiz</h3>
                         <div class="grid grid-cols-2 gap-4">
@@ -546,58 +547,11 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Vaka Çalışmaları</h2>
 
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Vaka Çalışması 1 -->
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                            alt="Lüks Marka" class="w-full h-48 object-cover">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">Branding</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Digital</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Lüks Marka Yeniden Konumlandırma</h3>
-                        <p class="text-accent/80 text-sm mb-4">Global bilinirliği %65 artıran stratejik kampanya.</p>
-                        <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
-                            <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass rounded-3xl overflow-hidden hover-lift group">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab8276846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                            alt="Dijital Dönüşüm" class="w-full h-48 object-cover">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">SEO</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Dijital Dönüşüm Başarısı</h3>
-                        <p class="text-accent/80 text-sm mb-4">Organik trafiği %80 artıran SEO kampanyası.</p>
-                        <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
-                            <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass rounded-3xl overflow-hidden hover-lift group">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        <img src="./images/marka.png"
                             alt="Yerel Üretici" class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -612,55 +566,57 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Yerel Üreticiyle Marka Yolculuğu</h3>
-                        <p class="text-accent/80 text-sm mb-4">Sorun: Ürünleri kaliteli olmasına rağmen, markalaşma eksikliği sebebiyle pazarda fark yaratamayan bir gıda üreticisi.<br>Çözüm: Marka kimliği oluşturduk, ambalaj tasarımı ve pazarlama iletişimini yeniden kurguladık.<br>Sonuç: 6 ay içinde ürün bilinirliği %300 arttı, satış noktası sayısı 5 katına çıktı.</p>
+                        <p class="text-accent/80 text-sm mb-4">
+                            <strong>Sorun:</strong> Ürünleri kaliteli olmasına rağmen, markalaşma eksikliği sebebiyle pazarda fark yaratamayan bir gıda üreticisi.<br><br>
+                            <strong>Çözüm:</strong> Marka kimliği oluşturduk, ambalaj tasarımı ve pazarlama iletişimini yeniden kurguladık.<br><br>
+                            <strong>Sonuç:</strong> 6 ay içinde ürün bilinirliği %300 arttı, satış noktası sayısı 5 katına çıktı.
+                        </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
                             <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
                         </a>
                     </div>
                 </div>
 
+                <!-- Vaka Çalışması 2 -->
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab8276846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
                             alt="Sadakat Programı" class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">Loyalty</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Campaign</span>
-                            </div>
-                        </div>
+                    
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Hizmet Sektöründe Sadakat Programı Başarısı</h3>
-                        <p class="text-accent/80 text-sm mb-4">Sorun: Tek seferlik müşteriler, düşük tekrar satın alma oranı.<br>Çözüm: Segmentasyon yapılarak özel kampanyalarla sadakat programı devreye alındı.<br>Sonuç: 3 ayda tekrar satın alma oranı %48 arttı.</p>
+                        <p class="text-accent/80 text-sm mb-4">
+                            <strong>Sorun:</strong> Tek seferlik müşteriler, düşük tekrar satın alma oranı.<br><br>
+                            <strong>Çözüm:</strong> Segmentasyon yapılarak özel kampanyalarla sadakat programı devreye alındı.<br><br>
+                            <strong>Sonuç:</strong> 3 ayda tekrar satın alma oranı %48 arttı.
+                        </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
                             <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
                         </a>
                     </div>
                 </div>
 
+                <!-- Vaka Çalışması 3 -->
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
                             alt="B2B Konumlandırma" class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">B2B</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Strategy</span>
-                            </div>
-                        </div>
+                    
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Kurumsal Firma ile B2B Marka Konumlandırması</h3>
-                        <p class="text-accent/80 text-sm mb-4">Sorun: Potansiyel müşterilere ulaşmakta zorlanan kurumsal promosyon tedarikçisi.<br>Çözüm: LinkedIn içerik stratejisi, referans sistemi ve özel teklif sunumları geliştirildi.<br>Sonuç: 2 ay içinde 4 büyük yeni müşteri kazanımı, satış hacminde %65 artış.</p>
+                        <p class="text-accent/80 text-sm mb-4">
+                            <strong>Sorun:</strong> Potansiyel müşterilere ulaşmakta zorlanan kurumsal promosyon tedarikçisi.<br><br>
+                            <strong>Çözüm:</strong> LinkedIn içerik stratejisi, referans sistemi ve özel teklif sunumları geliştirildi.<br><br>
+                            <strong>Sonuç:</strong> 2 ay içinde 4 büyük yeni müşteri kazanımı, satış hacminde %65 artış.
+                        </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
                             <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
                         </a>
@@ -669,9 +625,9 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="#contact"
+                <a href="#contact" id="contact-button"
                     class="bg-gradient-to-r from-secondary to-yellow-500 text-charcoal px-8 py-3 rounded-xl hover:from-yellow-500 hover:to-yellow-600 transition-all hover:scale-105 text-base">
-                    <i class="fas fa-envelope mr-1"></i>Danışmanlık Al
+                    <i class="fas fa-envelope mr-1"></i>Bilgi Al
                 </a>
             </div>
         </div>
@@ -689,13 +645,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                        <div
-                            class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="flex space-x-2">
-                                <span class="bg-secondary text-charcoal text-xs px-2 py-1 rounded">İletişim</span>
-                                <span class="bg-primary text-charcoal text-xs px-2 py-1 rounded">Destek</span>
-                            </div>
-                        </div>
+                   
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-6">Bize Ulaşın</h3>
@@ -794,7 +744,7 @@
         });
 
         const typedText = document.getElementById('typed-text');
-        const texts = ['Stratejik Pazarlama', 'Dijital Pazarlama', 'Gerilla Marketing', 'Noro Pazarlama', 'Sosyal Medya Yönetimi'];
+        const texts = ['Stratejik Pazarlama', 'Dijital Pazarlama', 'Gerilla Marketing', 'Nüro Pazarlama', 'Sosyal Medya Yönetimi'];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -897,6 +847,21 @@
                 formMessage.classList.remove('text-secondary', 'hidden');
                 formMessage.classList.add('text-red-500');
             }
+        });
+
+        // WhatsApp animasyonu
+        const whatsappButton = document.querySelector('.whatsapp-button');
+        const whatsappIcon = whatsappButton.querySelector('i');
+        const contactButton = document.getElementById('contact-button');
+
+        contactButton.addEventListener('click', () => {
+            whatsappButton.classList.add('whatsapp-pulse');
+            whatsappIcon.style.color = '#25D366';
+            
+            setTimeout(() => {
+                whatsappButton.classList.remove('whatsapp-pulse');
+                whatsappIcon.style.color = 'var(--secondary)';
+            }, 1000);
         });
 
         window.addEventListener('scroll', () => {
