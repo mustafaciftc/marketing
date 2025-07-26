@@ -70,8 +70,16 @@
         }
 
         @keyframes blink {
-            0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: var(--secondary); }
+
+            0%,
+            50% {
+                border-color: transparent;
+            }
+
+            51%,
+            100% {
+                border-color: var(--secondary);
+            }
         }
 
         .skill-bar {
@@ -246,9 +254,20 @@
         }
 
         @keyframes whatsappPulse {
-            0% { transform: scale(1); background: rgba(249, 246, 238, 0.15); }
-            50% { transform: scale(1.2); background: #25D366; }
-            100% { transform: scale(1); background: rgba(249, 246, 238, 0.15); }
+            0% {
+                transform: scale(1);
+                background: rgba(249, 246, 238, 0.15);
+            }
+
+            50% {
+                transform: scale(1.2);
+                background: #25D366;
+            }
+
+            100% {
+                transform: scale(1);
+                background: rgba(249, 246, 238, 0.15);
+            }
         }
 
         @media (min-width: 769px) {
@@ -269,79 +288,99 @@
             #title {
                 margin-top: 50px;
             }
+
             h1 {
-                font-size: 2rem; 
+                font-size: 2rem;
             }
+
             .text-xl {
-                font-size: 1.125rem; 
+                font-size: 1.125rem;
             }
+
             .text-lg {
-                font-size: 0.875rem; 
+                font-size: 0.875rem;
             }
+
             .container {
                 padding-left: 0.5rem;
-                padding-right: 0.5rem; 
+                padding-right: 0.5rem;
             }
+
             .grid.md\:grid-cols-2,
             .grid.lg\:grid-cols-3 {
                 grid-template-columns: 1fr;
             }
+
             .stat-number {
                 font-size: 1.75rem;
             }
+
             section {
                 padding-top: 3rem;
-                padding-bottom: 3rem; 
+                padding-bottom: 3rem;
             }
+
             .min-h-screen {
-                min-height: calc(100vh - 3rem); 
+                min-height: calc(100vh - 3rem);
             }
+
             .whatsapp-button {
                 width: 50px;
                 height: 50px;
             }
+
             .whatsapp-button i {
-                font-size: 22px; 
+                font-size: 22px;
             }
+
             nav .gradient-text {
-                font-size: 1.5rem; 
-                line-height: 1.2; 
+                font-size: 1.5rem;
+                line-height: 1.2;
             }
+
             nav img {
-                height: 12rem; 
-                max-width: 100%; 
+                height: 12rem;
+                max-width: 100%;
             }
+
             #home p {
-                margin-bottom: 1.5rem; 
+                margin-bottom: 1.5rem;
             }
+
             #home .grid {
-                grid-template-columns: 1fr 1fr; 
+                grid-template-columns: 1fr 1fr;
                 gap: 1rem;
             }
         }
 
         @media (max-width: 640px) {
             h1 {
-                font-size: 1.75rem; 
+                font-size: 1.75rem;
             }
+
             .text-xl {
                 font-size: 1rem;
             }
+
             .text-lg {
-                font-size: 0.75rem; 
+                font-size: 0.75rem;
             }
+
             .grid.grid-cols-2 {
                 grid-template-columns: 1fr;
             }
+
             nav img {
-                height: 10rem; 
+                height: 10rem;
             }
+
             #mobile-menu {
-                width: 70%; 
-                padding: 1.5rem; 
+                width: 70%;
+                padding: 1.5rem;
             }
+
             #mobile-menu a {
-                font-size: 1.1rem; 
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -449,7 +488,7 @@
                 </div>
 
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
-                
+
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-4">Değerlerimiz</h3>
                         <div class="grid grid-cols-2 gap-4">
@@ -512,9 +551,56 @@
                                     <div class="skill-progress" data-width="92"></div>
                                 </div>
                             </div>
+                            <!-- Yeni Eklenen Alanlar -->
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <span>Stratejik Pazarlama</span>
+                                    <span>94%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="94"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <span>Dijital Pazarlama</span>
+                                    <span>93%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="93"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <span>Gerilla Marketing</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <span>Nöro Pazarlama</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2 text-sm">
+                                    <span>Sosyal Medya Yönetimi</span>
+                                    <span>96%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="96"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
                     <div class="p-6">
@@ -551,8 +637,7 @@
                 <!-- Vaka Çalışması 1 -->
                 <div class="glass rounded-3xl overflow-hidden hover-lift group">
                     <div class="relative">
-                        <img src="./images/marka.png"
-                            alt="Yerel Üretici" class="w-full h-48 object-cover">
+                        <img src="./images/marka.png" alt="Yerel Üretici" class="w-full h-48 object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
@@ -567,9 +652,12 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Yerel Üreticiyle Marka Yolculuğu</h3>
                         <p class="text-accent/80 text-sm mb-4">
-                            <strong>Sorun:</strong> Ürünleri kaliteli olmasına rağmen, markalaşma eksikliği sebebiyle pazarda fark yaratamayan bir gıda üreticisi.<br><br>
-                            <strong>Çözüm:</strong> Marka kimliği oluşturduk, ambalaj tasarımı ve pazarlama iletişimini yeniden kurguladık.<br><br>
-                            <strong>Sonuç:</strong> 6 ay içinde ürün bilinirliği %300 arttı, satış noktası sayısı 5 katına çıktı.
+                            <strong>Sorun:</strong> Ürünleri kaliteli olmasına rağmen, markalaşma eksikliği sebebiyle
+                            pazarda fark yaratamayan bir gıda üreticisi.<br><br>
+                            <strong>Çözüm:</strong> Marka kimliği oluşturduk, ambalaj tasarımı ve pazarlama iletişimini
+                            yeniden kurguladık.<br><br>
+                            <strong>Sonuç:</strong> 6 ay içinde ürün bilinirliği %300 arttı, satış noktası sayısı 5
+                            katına çıktı.
                         </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
                             <i class="fas fa-external-link-alt mr-1"></i>Detayları Gör
@@ -585,13 +673,14 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                    
+
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Hizmet Sektöründe Sadakat Programı Başarısı</h3>
                         <p class="text-accent/80 text-sm mb-4">
                             <strong>Sorun:</strong> Tek seferlik müşteriler, düşük tekrar satın alma oranı.<br><br>
-                            <strong>Çözüm:</strong> Segmentasyon yapılarak özel kampanyalarla sadakat programı devreye alındı.<br><br>
+                            <strong>Çözüm:</strong> Segmentasyon yapılarak özel kampanyalarla sadakat programı devreye
+                            alındı.<br><br>
                             <strong>Sonuç:</strong> 3 ayda tekrar satın alma oranı %48 arttı.
                         </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
@@ -608,13 +697,15 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                    
+
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold mb-3">Kurumsal Firma ile B2B Marka Konumlandırması</h3>
                         <p class="text-accent/80 text-sm mb-4">
-                            <strong>Sorun:</strong> Potansiyel müşterilere ulaşmakta zorlanan kurumsal promosyon tedarikçisi.<br><br>
-                            <strong>Çözüm:</strong> LinkedIn içerik stratejisi, referans sistemi ve özel teklif sunumları geliştirildi.<br><br>
+                            <strong>Sorun:</strong> Potansiyel müşterilere ulaşmakta zorlanan kurumsal promosyon
+                            tedarikçisi.<br><br>
+                            <strong>Çözüm:</strong> LinkedIn içerik stratejisi, referans sistemi ve özel teklif
+                            sunumları geliştirildi.<br><br>
                             <strong>Sonuç:</strong> 2 ay içinde 4 büyük yeni müşteri kazanımı, satış hacminde %65 artış.
                         </p>
                         <a href="#" class="text-secondary hover:text-yellow-400 transition-colors text-sm">
@@ -645,7 +736,7 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                   
+
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-6">Bize Ulaşın</h3>
@@ -744,7 +835,7 @@
         });
 
         const typedText = document.getElementById('typed-text');
-        const texts = ['Stratejik Pazarlama', 'Dijital Pazarlama', 'Gerilla Marketing', 'Nüro Pazarlama', 'Sosyal Medya Yönetimi'];
+        const texts = ['Stratejik Pazarlama', 'Dijital Pazarlama', 'Gerilla Marketing', 'Nöro Pazarlama', 'Sosyal Medya Yönetimi'];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -857,7 +948,7 @@
         contactButton.addEventListener('click', () => {
             whatsappButton.classList.add('whatsapp-pulse');
             whatsappIcon.style.color = '#25D366';
-            
+
             setTimeout(() => {
                 whatsappButton.classList.remove('whatsapp-pulse');
                 whatsappIcon.style.color = 'var(--secondary)';
